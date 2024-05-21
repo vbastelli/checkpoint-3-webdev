@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint</title>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <button id="botao" type="button" onclick="mostrar()">Entrar com as notas</button>
+    <h2>Clique no botao acima para informar as notas do aluno:</h2>
+    <script>
+        function mostrar(){
+            var x = prompt('Digite a primeira nota: ')
+            var y = prompt('Digite a segunda nota: ')
+            var media = (parseFloat(x) + parseFloat(y)) / 2
+
+            var msg = ("Com as notas " + x + " e " + y + ", a média é " + media + ".")
+
+            document.getElementById("resultado").innerHTML=msg;
+            document.querySelector("resultado");
+
+            if (media < 3){
+            var apr = ("Como a média foi abaixo de 3.0, o aluno está REPROVADO")
+            } else if (media < 6){
+                var apr = ("Como a média foi abaixo de 6.0 e acima de 3.0, o aluno está de RECUPERAÇÃO.")
+            } else if (media >= 6){
+                var apr = ("Como a média foi acima de 6.0, o aluno está APROVADO.")
+            }
+            document.getElementById("aprovacao").innerHTML=apr;
+            document.querySelector("aprovacao");
+    }
+    </script>
+    <h4 id="resultado"></h4>
+    <h4 id="aprovacao"></h4>
+</body>
+</html>
